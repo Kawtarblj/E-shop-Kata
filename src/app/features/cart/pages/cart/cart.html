@@ -1,0 +1,61 @@
+<section class="cart-page">
+
+  <h1>Shopping Cart</h1>
+
+  @if (cart.count() === 0) {
+    <p class="empty">Cart is empty</p>
+  } @else {
+
+    <table class="cart-table">
+
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Qty</th>
+          <th>Total</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (item of cart.cartItems(); track item.id) {
+          <tr>
+
+            <td class="product">
+              <img [src]="item.image" />
+              <span>{{ item.title }}</span>
+            </td>
+
+            <td>{{ item.price }} €</td>
+
+            <td class="qty">
+              <button (click)="cart.decrease(item.id)">-</button>
+              <span>{{ item.quantity }}</span>
+              <button (click)="cart.add(item)">+</button>
+            </td>
+
+            <td>
+              {{ item.price * item.quantity }} €
+            </td>
+
+            <td>
+              <button class="remove" (click)="cart.remove(item.id)">
+                x
+              </button>
+            </td>
+
+          </tr>
+        }
+      </tbody>
+
+    </table>
+
+    <div class="cart-footer">
+      <h2>Total: {{ cart.total() }} €</h2>
+      <button (click)="cart.clear()">Clear Cart</button>
+    </div>
+
+  }
+
+</section>
