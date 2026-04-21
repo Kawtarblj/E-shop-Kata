@@ -1,7 +1,7 @@
 <section class="product-page">
 
   <h1>Products</h1>
-
+<!-- valeur de signal si true affiche -->
   @if (loading()) {
     <p>Loading...</p>
   }
@@ -9,15 +9,14 @@
   @for (category of categories(); track category) {
 
     <section class="category-block">
-<div class="category-header">
+       <div class="category-header">
 
-  <h2 class="category-title">{{ category }}</h2>
+        <h2 class="category-title">{{ category }}</h2>
 
-  <div class="actions">
-    <button (click)="next(category)">Next</button>
-  </div>
-
-</div>
+         <div class="actions">
+         <button (click)="next(category)">Next</button>
+         </div>
+      </div>
 
       <div class="grid">
           @for (product of getVisibleProducts(category); track product.id) {

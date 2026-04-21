@@ -1,11 +1,9 @@
 import { Injectable, signal, computed } from '@angular/core';
 import { Product } from '../../products/models/product.model';
-
-export interface CartItem extends Product {
-  quantity: number;
-}
+import{CartItem} from '../models/cart.model';
 
 @Injectable({ providedIn: 'root' })
+
 export class CartService {
 
   private items = signal<CartItem[]>(this.loadFromStorage());
