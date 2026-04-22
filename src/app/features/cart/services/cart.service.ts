@@ -10,10 +10,11 @@ export class CartService {
 
   cartItems = computed(() => this.items());
 
-  total = computed(() =>
-    this.items().reduce((sum, item) =>
-      sum + item.price * item.quantity, 0)
-  );
+total = computed(() =>
+  this.items()
+    .reduce((sum, item) => sum + item.price * item.quantity, 0)
+    .toFixed(2)
+);
 
   count = computed(() =>
     this.items().reduce((sum, item) =>

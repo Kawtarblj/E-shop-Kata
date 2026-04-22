@@ -7,7 +7,8 @@
 </div>
   <nav class="nav">
     <a routerLink="/products" routerLinkActive="active">Products</a>
-    <a routerLink="/cart" routerLinkActive="active">Cart</a>
+    <a routerLink="/cart" routerLinkActive="active">Cart <span class="badge">{{ cartCount() }}</span></a>
+    
   </nav>
 </header>
 
