@@ -12,5 +12,6 @@ import { CartService } from '../../services/cart.service';
 export class CartPage {
 
   cart = inject(CartService);
-
-}
+return() {
+  window.history.back();
+}}
