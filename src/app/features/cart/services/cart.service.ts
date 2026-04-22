@@ -34,14 +34,12 @@ export class CartService {
 
   private saveToStorage(items: CartItem[]) {
     if (typeof window !== 'undefined') {
-      localStorage.setItem('cart', JSON.stringify(items));
-    }
+      localStorage.setItem('cart', JSON.stringify(items));}
   }
 
   add(product: Product) {
     this.items.update(list => {
       const existing = list.find(p => p.id === product.id);
-
       const newList = existing
         ? list.map(p =>
             p.id === product.id

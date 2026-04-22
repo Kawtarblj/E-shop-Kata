@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { CartService } from '../../../cart/services/cart.service';
 import { ProductService } from '../../services/product.service';
 import { ProductCard } from '../../components/product-card';
@@ -16,19 +16,20 @@ export class ProductList {
 
   private productService = inject(ProductService);
   private cart = inject(CartService);
-
-onAddToCart(product: Product) {
-  this.cart.add(product);
-}
+  productssearch = this.productService.filteredProducts;
   products = this.productService.products;
   loading = this.productService.loading;
-
+clearSearch() {
+  this.productService.clearsearch();
+}
   pageSize = 3;
 
   categoryIndex = signal<Record<string, number>>({});
 
   constructor() {this.productService.getProducts(); }
+  
 
+  onAddToCart(product: Product) { this.cart.add(product);}
   categories() { return this.productService.categories();}
 
   byCategory(cat: string) { return this.productService.byCategory(cat);}

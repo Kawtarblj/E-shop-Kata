@@ -52,8 +52,8 @@
     </table>
 
     <div class="cart-footer">
-      <h2>Total: {{ cart.total() }} €</h2>
-       <h2>N°Items: {{ cart.count() }} </h2>
+      <h2>Total: {{ cart.total() }} € | N°Items: {{ cart.count() }} </h2>
+      
       <button (click)="cart.clear()">Clear Cart</button>
     </div>
 

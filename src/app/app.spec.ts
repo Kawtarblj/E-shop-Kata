@@ -9,12 +9,12 @@ describe('App', () => {
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it('should create the app', () => {//créer une instance du composant et vérifier qu'elle est créée avec succès
     const fixture = TestBed.createComponent(App);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
-
+//verifier que le titre est rendu correctement dans le template
   it('should render title', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();

@@ -31,7 +31,39 @@
   top: 0;
   z-index: 100;
 }
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 500px;
+  gap: 8px;
+}
 
+.search-container input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid #3765c1;
+  border-radius: 12px;
+  outline: none;
+  transition: 0.3s;
+  box-shadow: 0 0 0 4px rgba(74, 109, 225, 0.15);
+
+}
+
+.search-btn {
+  background:transparent;
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.search-btn:hover {
+  background: #4a6de1;
+  transform: translateY(-1px);
+}
 .nav {
   display: flex;
   gap: 10px;

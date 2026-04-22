@@ -62,9 +62,9 @@ h3 {
 
  
   display: -webkit-box;
-  -webkit-line-clamp: 2;//limiter le text dans 2 ligne 
+  -webkit-line-clamp: 2; 
   -webkit-box-orient: vertical;
-  overflow: hidden;//Cache le texte qui dépasse
+  overflow: hidden;
 }
 
 

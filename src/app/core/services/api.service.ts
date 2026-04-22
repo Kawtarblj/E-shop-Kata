@@ -17,4 +17,5 @@ get<T>(endpoint: string) {
     this.http.get<T>(`${this.baseUrl}/${endpoint}`)
   );
 }
+
 }

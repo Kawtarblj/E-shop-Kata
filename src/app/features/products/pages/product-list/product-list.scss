@@ -6,6 +6,22 @@
 
   margin-bottom: 16px;
 }
+.reset-btn {
+  background: #ef4444;
+  height: 36px;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.reset-btn:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
 h1 {
   font-size: 28px;
   font-weight: 700;

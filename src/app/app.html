@@ -1,9 +1,13 @@
 <header class="header">
   <h1>{{ title() }}</h1>
+
+<div class="search-container">
+  <input type="text" placeholder="Search..." [(ngModel)]="searchTerm"  (keyup.enter)="onSearch()" />
+  <button class="search-btn " (click)="onSearch()">🔍</button>
+</div>
   <nav class="nav">
     <a routerLink="/products" routerLinkActive="active">Products</a>
     <a routerLink="/cart" routerLinkActive="active">Cart</a>
-    
   </nav>
 </header>
 

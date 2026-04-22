@@ -1,6 +1,7 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, inject } from '@angular/core';
 import { ApiService } from '../../../core/services/api.service';
 import { Product } from '../models/product.model';
+import { SearchService } from '../../../core/services/search.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,21 @@ export class ProductService {
   loading = signal(false);
   error = signal<string | null>(null);
 
-  constructor(private api: ApiService) {}
+  //constructor(private api: ApiService) {}
+  private searchService = inject(SearchService);
+  private api=inject(ApiService);
+filteredProducts = computed(() => {
+  const search = this.searchService.searchTerm().toLowerCase().trim();
+
+  if (!search) {
+    return []; 
+  }
+
+  return this.products().filter(p =>
+    p.title.toLowerCase().includes(search)
+  );
+});
+clearsearch(){this.searchService.clearSearch();}
 
  async getProducts() {
   try {

@@ -1,7 +1,13 @@
 <section class="product-page">
-
-  <h1>Products</h1>
-<!-- valeur de signal si true affiche -->
+<div class="header">
+ <h1>Products</h1>
+ <div>
+     <div *ngFor="let product of productssearch()">
+        <button class="reset-btn" (click)="clearSearch()"> X Clear </button>
+        <app-product-card [product]="product"  (add)="onAddToCart($event)"> </app-product-card>
+     </div>
+</div>
+</div>
   @if (loading()) {
     <p>Loading...</p>
   }
