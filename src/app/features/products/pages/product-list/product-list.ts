@@ -2,7 +2,10 @@ import { Component, inject, signal } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
 import { CartService } from '../../../cart/services/cart.service';
 import { ProductService } from '../../services/product.service';
+
 import { ProductCard } from '../../components/product-card/product-card';
+
+
 import { Product } from '../../models/product.model';
 
 @Component({

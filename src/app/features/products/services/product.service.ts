@@ -29,6 +29,7 @@ filteredProducts = computed(() => {
 });
 clearsearch(){this.searchService.clearSearch();}
 
+
  getProducts() {
   this.loading.set(true);
   this.error.set(null);
@@ -44,7 +45,7 @@ clearsearch(){this.searchService.clearSearch();}
         this.loading.set(false);
       }
     });
-}
+  }
 
   categories = computed(() => {
     return [...new Set(

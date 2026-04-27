@@ -13,7 +13,9 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
 get<T>(endpoint: string) {
+
   return this.http.get<T>(`${this.baseUrl}/${endpoint}`);
+
 }
 
 }
