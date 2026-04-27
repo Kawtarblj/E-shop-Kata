@@ -1,0 +1,137 @@
+.cart-page {
+  width: 98%;
+  margin: 10px auto;
+  padding: 20px;
+
+  h1 {
+    text-align: center;
+    margin-bottom:5px;
+      color : #4a6de1;
+  }
+
+  .empty {
+    text-align: center;
+    color: #777;
+  }
+
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(165, 158, 177, 0.514);
+    border-radius: 12px;
+    overflow: hidden;
+
+    thead {
+      background:linear-gradient(90deg, #7aa2f9, #7c3aed);
+      color: white;
+    font-size: 50px;
+
+      th {
+        text-align: left;
+        padding: 15px;
+        font-weight: 600;
+        font-size: 14px;
+      }
+    }
+
+    tbody {
+      tr {
+        border-top: 1px solid #eee;
+        transition: 0.2s;
+
+        &:hover {
+          background: #fafafa;
+        }
+      }
+
+      td {
+        padding: 15px;
+        vertical-align: middle;
+      }
+    }
+
+    .product {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        background: #f9f9f9;
+        border-radius: 8px;
+        padding: 5px;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+
+    .qty {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 15px;
+
+      button {
+        border: none;
+        background: #eee;
+        padding: 10px 15px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+
+        &:hover {
+          background: #ddd;
+        }
+      }
+    }
+
+    .remove {
+      background: #f44336;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+
+      &:hover {
+        background: #d32f2f;
+      }
+    }
+  }
+
+  .cart-footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      font-size: 22px;
+      color : #4a6de1;
+    }
+.actions button {
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      justify-content: space-between;
+     
+
+      &:hover {
+        background: linear-gradient(90deg, #11aa11, #fff);
+        color: #7c3aed;
+        border: 1px solid #7c3aed;
+      }
+    }
+  
+
+}
+   
+}

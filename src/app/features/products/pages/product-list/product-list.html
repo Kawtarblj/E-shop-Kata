@@ -1,0 +1,42 @@
+<section class="product-page">
+<div class="header">
+ <h1>Products</h1>
+ <div>
+     <div *ngFor="let product of productssearch()">
+        <button class="reset-btn" (click)="clearSearch()"> X Clear </button>
+        <app-product-card [product]="product"  (add)="onAddToCart($event)"> </app-product-card>
+     </div>
+</div>
+</div>
+  @if (loading()) {
+    <p>Loading...</p>
+  }
+
+  @for (category of categories(); track category) {
+
+    <section class="category-block">
+       <div class="category-header">
+
+        <h2 class="category-title">{{ category }}</h2>
+
+         <div class="actions">
+         <button (click)="next(category)">Next</button>
+         </div>
+      </div>
+
+      <div class="grid">
+          @for (product of getVisibleProducts(category); track product.id) {
+        <app-product-card
+          [product]="product"
+          (add)="onAddToCart($event)">
+        </app-product-card>
+      }
+      </div>
+
+    
+
+    </section>
+
+  }
+
+</section>

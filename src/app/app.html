@@ -1,0 +1,21 @@
+<header class="header">
+  <h1>{{ title() }}</h1>
+
+<div class="search-container">
+  <input type="text" placeholder="Search..." [(ngModel)]="searchTerm"  (keyup.enter)="onSearch()" />
+  <button class="search-btn " (click)="onSearch()">🔍</button>
+</div>
+  <nav class="nav">
+    <a routerLink="/products" routerLinkActive="active">Products</a>
+    <a routerLink="/cart" routerLinkActive="active">Cart <span class="badge">{{ cartCount() }}</span></a>
+    
+  </nav>
+</header>
+
+<main class="main">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <p>2026 My E-shop App.</p>
+</footer>
